@@ -1,3 +1,22 @@
-p {
-  color: teal;
+body {
+  width: 100%;
+}
+
+
+.main {
+  background-color: yellow;
+  display: block;
+  float: left;
+  margin: 20px 150px 0 10px;
+  width: 700px;
+  height: 600px;
+}
+
+.sidebar {
+  background-color: teal;
+  display: block;
+  float: left;
+  margin: 20px 10px 0 150px;
+  width: 200px;
+  height: 500px;
 }
