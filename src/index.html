@@ -66,18 +66,49 @@
   </section> <!-- END sidebar -->
   <section class="main">  <!-- START main section -->
     <nav>
-      <section class= "tabs octicon octicon-plus">Contributions</section><!-- Contributions -->
-        <div>
+      <div class= "tabs octicon octicon-plus">Contributions</div><!-- Contributions Tab-->
+        <section><!-- Contributions -->
           <p>CONTRIBUTATIONS!</p>
-        </div>
-      <section class= "tabs active octicon octicon-repo">Repositories</section><!-- Repositories -->
-        <div class= "active">
-          <p>REPOS!!</p>
-        </div>
-      <section class= "tabs octicon octicon-rss">Public activity</section><!-- Conrtribution activity -->
-        <div>
+        </section>
+      <div class= "tabs active octicon octicon-repo">Repositories</div><!-- Repositories Tab-->
+        <section class= "active"><!-- Repositories -->
+            <form>
+              <input placeholder="Find a repository..."></input>
+              <button>Search</button>
+              <p>All Sources Forks Mirrors</p>
+            </form>
+          <div  class="repo">
+            <h3>Spoon Knife</h3>
+            <p> This repository is for demonstration purposes only.</p>
+            <p>Updated 8 hours ago</p>
+            <p>CSS
+              <span class="octicon octicon-star">9,838</span>
+              <span class="octicon octicon-git-branch">70,444</span>
+            </p>
+          </div> <!--SpoonKnife-->
+          <div class="repo">
+            <h3>Hello World</h3>
+            <p> This your first repo!</p>
+            <p>Updated 4 hours ago</p>
+            <p>
+              <span class="octicon octicon-star">1,401</span>
+              <span class="octicon octicon-git-branch">1,112</span>
+            </p>
+          </div> <!--Hello World-->
+          <div class="repo">
+            <h3>octocat.github.io</h3>
+            <p> </p><!--Description-->
+            <p>Updated 4 days ago</p>
+            <p>CSS
+              <span class="octicon octicon-star">10</span>
+              <span class="octicon octicon-git-branch">18</span>
+            </p>
+          </div> <!--octocat.github.io-->
+        </section>
+      <div class= "tabs octicon octicon-rss">Public activity</div><!-- Public activity Tab-->
+        <section><!-- Public activity -->
           <p>PUBLIC DISPLAYS!!!</p>
-        </div>
+        </section>
       <button class="octicon octicon-person">Follow</button>
       <button class="octicon octicon-stop"></button>
     </nav> <!--Subheader-->
