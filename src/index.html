@@ -19,74 +19,70 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 <section class="container">
-<section class="sidebar">  <!-- START sidebar -->
-  <img src="https://avatars1.githubusercontent.com/u/583231?v=3"></img>
-  <div class="username">
-    <h2>{{name}}</h2>
-    <h3>{{login}}</h3>
-  </div>
-  <div class="profile-info">
-    <ul>
-      <li class="company">
-        <span class="octicon octicon-organization"></span>
-        {{company}}
-      </li>
-      <li class="location">
-        <span class="octicon octicon-location"></span>
-          {{location}}
-      </li>
-      <li class="email">
-        <span class="octicon octicon-mail"></span>
-        {{email}}
-      </li>
-      <li class="blog">
-      <span class="octicon octicon-link"></span>
-      {{blog}}
-      </li>
-      <li class="created_at">
-      <span class="octicon octicon-clock"></span>
-      {{created_at}}
-      </li>
-    </ul>
-  </div>
-  <section class="key-stats">
-    <div>
-      <h2>1.1k</h2>
-      <p>Followers</p>
+  <section class="sidebar">  <!-- START sidebar -->
+    <img src="https://avatars1.githubusercontent.com/u/583231?v=3"></img>
+    <div class="username">
+      <h2>{{name}}</h2>
+      <h3>{{login}}</h3>
     </div>
-    <div>
-      <h2>2</h2>
-      <p>Starred</p>
+    <div class="profile-info">
+      <ul>
+        <li class="company">
+          <span class="octicon octicon-organization"></span>
+          {{company}}
+        </li>
+        <li class="location">
+          <span class="octicon octicon-location"></span>
+            {{location}}
+        </li>
+        <li class="email">
+          <span class="octicon octicon-mail"></span>
+          {{email}}
+        </li>
+        <li class="blog">
+        <span class="octicon octicon-link"></span>
+        {{blog}}
+        </li>
+        <li class="created_at">
+        <span class="octicon octicon-clock"></span>
+        {{created_at}}
+        </li>
+      </ul>
     </div>
-    <div>
-      <h2>6</h2>
-      <p>Following</p>
-    </div>
-  </section> <!--END key-stats-->
-</section> <!-- END sidebar -->
-<section class="main">  <!-- START main section -->
-  <nav>
-    <span class="octicon octicon-plus"></span>
-    <button class= "tabs">Contributions</button>
-  <section>
-    <p>CONTRIBUTATIONS!</p>
-  </section> <!-- Popular Repos -->
-    <span class="octicon octicon-repo"></span>
-    <button class= "tabs active">Repositories</button>
-  <section>
-    <p>REPOS!!</p>
-  </section> <!-- Public conrtributions -->
-    <span class="octicon octicon-rss"></span>
-    <button class= "tabs">Public activity</button>
-  <section>
-    <p>PUBLIC DISPLAYS!!!</p>
-  </section> <!-- Conrtribution activity -->
-    <button class="octicon octicon-person">Follow</button>
-    <button class="octicon octicon-stop"></button>
-  </nav> <!--Subheader-->
-</section>
-  <!-- END main section -->
-</section>
+    <section class="key-stats">
+      <div>
+        <h2>1.1k</h2>
+        <p>Followers</p>
+      </div>
+      <div>
+        <h2>2</h2>
+        <p>Starred</p>
+      </div>
+      <div>
+        <h2>6</h2>
+        <p>Following</p>
+      </div>
+    </section> <!--END key-stats-->
+  </section> <!-- END sidebar -->
+  <section class="main">  <!-- START main section -->
+    <nav>
+      <section class= "tabs octicon octicon-plus">Contributions</section><!-- Contributions -->
+        <div>
+          <p>CONTRIBUTATIONS!</p>
+        </div>
+      <section class= "tabs active octicon octicon-repo">Repositories</section><!-- Repositories -->
+        <div class= "active">
+          <p>REPOS!!</p>
+        </div>
+      <section class= "tabs octicon octicon-rss">Public activity</section><!-- Conrtribution activity -->
+        <div>
+          <p>PUBLIC DISPLAYS!!!</p>
+        </div>
+      <button class="octicon octicon-person">Follow</button>
+      <button class="octicon octicon-stop"></button>
+    </nav> <!--Subheader-->
+
+  </section>  <!-- END main section -->
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>

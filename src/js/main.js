@@ -3,7 +3,6 @@ jQuery.ajax('../apis/github/users/octocat.json').then(function(data){
 });
 
 
-
 $(".tabs").click(function(){
     addTabs();
     $(this).addClass("active");
