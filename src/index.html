@@ -26,11 +26,13 @@
           <h1 class="name">{{name}}</h1>
           <h1 class="login">{{login}}</h1>
           <ul class="leftsidelist">
-            <li><span class="octicon octicon-organization"></span>{{company}}</li>
-            <li><span class="octicon octicon-location">{{location}}</li>
-            <li><span class="octicon octicon-mail">{{email}}</li>
-            <li><span class="octicon octicon-link">{{blog}}</li>
-            <li><span class="octicon octicon-clock">{{created_at}}</li>
+            <template>
+              <li><span class="octicon octicon-organization"></span>{{company}}</li>
+              <li><span class="octicon octicon-location">{{location}}</li>
+              <li><span class="octicon octicon-mail">{{email}}</li>
+              <% if ( blog ) { %><li><span class="octicon octicon-link">{{blog}}</li><% } %>
+              <li><span class="octicon octicon-clock">{{created_at}}</li>
+            </template>
           </ul>
           <div class="3littlethings">{{followers}}</div>
           <div class="3littlethings">2 Stared</div>

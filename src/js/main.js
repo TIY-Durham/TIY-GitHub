@@ -46,4 +46,8 @@ $.getJSON('apis/github/users/jmcreasman.json', function(data) {
   $('.name').html('<h1>' + data.name);
   $('.login').html('<h1>' + data.login);
 
+  var profileTpl = _.template($('.leftsidelist template').html())
+
+  $('.leftsidelist').html(profileTpl(data));
+  // better to `$.append` or keep `profileTpl` _outside_ of this callback
 });
