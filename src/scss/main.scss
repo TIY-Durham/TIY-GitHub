@@ -94,22 +94,12 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+
+$octicons-font-path: "../../bower_components/octicons/octicons";
+// FIXME: https://github.com/sass/sass/issues/279
+// @import $octicons-font-path + '/octicons';
+@import "../../bower_components/octicons/octicons/octicons";
 @import 'custom';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* ==========================================================================
    Helper classes
