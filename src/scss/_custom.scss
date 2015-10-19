@@ -83,3 +83,14 @@ list-style-type: none;
         .tab.active {
             display:block;
         }
+
+@import '../../bower_components/octicons/octicons/octicons.scss';
+
+          .icon-contrib::before {
+            @extend .octicon;
+            @extend .octicon-plus::before;
+          }
+          .icon-repos::before {
+            font-family: 'octicons';
+            content: '\f001';
+          }

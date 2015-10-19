@@ -42,8 +42,36 @@ jQuery(document).ready(function() {
 //     }
 // });
 // Only did the first couple since I'd be doing the whole thing with lodash (assuming I'll know how to do that :p)
-$.getJSON('apis/github/users/jmcreasman.json', function(data) {
-  $('.name').html('<h1>' + data.name);
-  $('.login').html('<h1>' + data.login);
+// $.ajax('apis/github/users/jmcreasman.json')
+$.getJSON('apis/github/users/jmcreasman.json')
+//window.fetch('apis/github/users/jmcreasman.json')
+  .then(function(data) {
+    $('.name').html('<h1>' + data.name);
+    $('.login').html('<h1>' + data.login);
 
-});
+    _.templateSettings.interpolate = /{{([\s\S]+?)}}/g;
+    var profileTpl = _.template($('.leftsidelist template').html())
+
+    // $('.leftsidelist').append(profileTpl({
+    //   company: 'The Internet',
+    //   email: 'octocat@github.com',
+    //   blog: 'https://blog.example.com',
+    //   created_at: 'Today!'
+    // }));
+
+    $('.leftsidelist').append(profileTpl(data))
+    // $('.leftsidelist').html(profileTpl(data));
+    // better to `$.append` or keep `profileTpl` _outside_ of this callback
+  });
+
+
+
+
+
+
+
+
+
+
+
+/* leave this alone, will ya!? */
