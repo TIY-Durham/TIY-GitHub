@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/boshnivolo/TIY-GitHub#readme",
   "devDependencies": {
-    "bower": "^1.5.3"
+    "bower": "^1.5.3",
+    "wiredep": "^2.2.2"
   }
 }
