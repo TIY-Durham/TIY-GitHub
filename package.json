@@ -4,7 +4,8 @@
   "description": "",
   "main": "package.json",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "start": "browser-sync start --server"
   },
   "repository": {
     "type": "git",
