@@ -1,0 +1,26 @@
+{
+  "name": "TIY-GitHub",
+  "version": "0.0.0",
+  "homepage": "https://github.com/boshnivolo/TIY-Github",
+  "authors": [
+    "Jasmine Baik <boshnivolo@gmail.com>"
+  ],
+  "description": "",
+  "main": "src/index.html",
+  "moduleType": [],
+  "license": "pizza!",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.7",
+    "lodash": "~3.10.1",
+    "jquery": "~2.1.4",
+    "octicons": "~3.1.0"
+  }
+}
