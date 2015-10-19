@@ -4,29 +4,48 @@
 //
 // For now make the tab 'repo' always active.
 
-// $('a[href="#contributions"]').on('click', function (){
-//   $(this).addClass('active').siblings().removeClass('active');
-//   $('#contributions').addClass('active').siblings().removeClass('active');
-// });
-//
-// $('a[href="#repositories"]').on('click', function (){
-//   $(this).addClass('active').siblings().removeClass('active');
-//   $('#repositories').addClass('active').siblings().removeClass('active');
-// });
-//
-// $('a[href="#public-activity"]').on('click', function (){
-//   $(this).addClass('active').siblings().removeClass('active');
-//   $('#public-activity').toggleClass('active').siblings().removeClass('active');
-// });
+;(function($){
+  $(function(){ // jQuery(document).on('ready', function(){
 
-$('.tabs > a').on('click', function(){
-  var panelId = $(this).attr('href');
+    // Refactored all of this...
+    // $('a[href="#contributions"]').on('click', function (){
+    //   $(this).addClass('active').siblings().removeClass('active');
+    //   $('#contributions').addClass('active').siblings().removeClass('active');
+    // });
+    //
+    // $('a[href="#repositories"]').on('click', function (){
+    //   $(this).addClass('active').siblings().removeClass('active');
+    //   $('#repositories').addClass('active').siblings().removeClass('active');
+    // });
+    //
+    // $('a[href="#public-activity"]').on('click', function (){
+    //   $(this).addClass('active').siblings().removeClass('active');
+    //   $('#public-activity').toggleClass('active').siblings().removeClass('active');
+    // });
+    // Into this...
+    $('.tabs > a')
+      .on('click', function(){
+        var panelId = $(this).attr('href');
 
-  $(this).add(panelId)
-    .addClass('active')
-  .siblings()
-    .removeClass('active');
+        $(this).add(panelId)
+          .addClass('active')
+        .siblings()
+          .removeClass('active');
 
-  console.log($(this).siblings());
-}).filter('[href="#repositories"]')
-  .trigger('click'); // or .click()
+        // console.log($(this).siblings());
+      })
+    .filter('[href="#repositories"]')
+    // $('[href="#repositories"]')
+      .trigger('click') // or .click()
+
+  }); // END document.ready
+})(jQuery.noConflict())
+
+
+
+
+
+
+
+
+/* For demo purposes only... */
