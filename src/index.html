@@ -27,10 +27,21 @@
           <h1 class="login">{{login}}</h1>
           <ul class="leftsidelist">
             <template>
+              <li class="company">{{company}}</li>
+              <style>
+                .leftsidelist li:empty {
+                  display: none;
+                }
+                li.company::before {
+                  content: '\faf0';
+                  font-family: octicons;
+                  /* . . . */
+                }
+              </style>
               <li><span class="octicon octicon-organization"></span>{{company}}</li>
               <li><span class="octicon octicon-location">{{location}}</li>
               <li><span class="octicon octicon-mail">{{email}}</li>
-              <% if ( blog ) { %><li><span class="octicon octicon-link">{{blog}}</li><% } %>
+              <li><span class="octicon octicon-link">{{blog}}</li>
               <li><span class="octicon octicon-clock">{{created_at}}</li>
             </template>
           </ul>
@@ -39,51 +50,63 @@
           <div class="3littlethings">{{following}}</div>
         </section>
         <section class="right">
-          <div class="tabs">
-            <ul class="tab-links">
-              <li class="octicon octicon-diff-added"><a href="#tab1">Contributions</a></li>
-              <li class="octicon octicon-repo active"><a href="#tab2">Repositories</a></li>
-              <li class="octicon octicon-rss"><a href="#tab3">Public activity</a></li>
+          <style>
+            .tabs {
+
+            }
+            .tabs aside {
+              float: right;
+            }
+            .icon-contrib {
+
+            }
+          </style>
+          <nav class="tabs">
+            <a href="#" class="icon-contrib">Contributions</a>
+            <a href="#panel-repositories" class="icon-repos">Repositories</a>
+            <a href="#tab3">Public activity</a>
+            <aside>
               <button class="octicon octicon-person follow" type="button">Follow</button>
               <button class="octicon octicon-stop" type="button"></button>
-            </ul>
+            </aside>
+          </nav><!-- .tabs -->
           <div class="tab-content">
             <nav id="tab1" class="tab">
               <p>tab 1</p>
             </nav>
-            <nav id="tab2" class="tab active">
-              <div class="searchnfliter">
-                <hr>
-                <form>
-                  <input type="text" id="your-repos-filter" name="q"
-                  class="filter_input js-filterable-field"
-                  placeholder="Find a repository…"
-                  tabindex="2" aria-label="Filter your repositories by name">
-                  <input type="submit" value="Search">
-                  <input type="submit" value="All">
-                  <input type="submit" value="Sources">
-                  <input type="submit" value="Forks">
-                  <input type="submit" value="Mirrors">
-                </form>
-              </div>
-              <div class="repolist">
-                <hr>
-                <h3>{{???}}</h3>
-                <p>{{description}}</p>
-                <p>{{updated_at}}</p>
-                <hr>
-                <h3>Hello-World!</h3>
-                <p>This your first repo!</p>
-                <p>Updated 4 days ago</p>
-                <hr>
-                <h3>octocat.github.io</h3>
-                <p>
-                  <!-- Leave me blank for now -->
-                </p>
-                <p>Updated 4 days ago</p>
-                <hr>
-              </div>
-            </nav>
+            <section class="panel active" id="panel-repositories">
+              <form class="filter-repos">
+                <fieldset class="search-repos">
+                  <input><button>Search</button>
+                </fieldset>
+
+                <nav class="filters">
+                  <a href="#" class="active">All</a>
+                  <a href="#">Sources</a>
+                  <a href="#">Forks</a>
+                  <a href="#">Mirrors</a>
+                </nav>
+              </form>
+              <div class="repo-list">
+                <article>
+                  <h3>{{???}}</h3>
+                  <p>{{description}}</p>
+                  <p>{{updated_at}}</p>
+                </article>
+                <article>
+                  <h3>Hello-World!</h3>
+                  <p>This your first repo!</p>
+                  <p>Updated 4 days ago</p>
+                </article>
+                <article>
+                  <h3>octocat.github.io</h3>
+                  <p>
+                    <!-- Leave me blank for now -->
+                  </p>
+                  <p>Updated 4 days ago</p>
+                </article>
+              </div><!-- .repo-list -->
+            </section><!-- .tab.active#repositories -->
             <nav id="tab3" class="tab">
               <p>tab 3</p>
             </nav>
