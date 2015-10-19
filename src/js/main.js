@@ -41,7 +41,31 @@
   }); // END document.ready
 })(jQuery.noConflict())
 
+;(function(){ // IIFE
+  angular.module('TIY-GitHub', [ ])
+    // .controller('GenericController', function($http, $scope){
+    .run(function($http, $rootScope){
+      // jQuery.ajax(. . . ): (jqXHR / Deferred).then
+      // jQuery.getJSON(. . .): (jqXHR / Deferred).then
+      $http.get('/apis/github/users/boshnivolo.json')
+        .then(function(response){
+          // Baby steps...
+          // $rootScope.name = response.data.name;
+          // $rootScope.login = response.data.login;
+          // $rootScope.location = response.data.location;
 
+          // Next baby step...
+          // $rootScope.user = {
+          //   name: response.data.name,
+          //   login: response.data.login,
+          //   location: response.data.location,
+          // }
+
+          // Final baby step...
+          $rootScope.user = response.data;
+        });
+    }) // END run -- load data from `boshnivolo`
+})(); // END IIFE
 
 
 
