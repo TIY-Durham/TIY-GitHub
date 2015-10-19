@@ -5,7 +5,8 @@
   "main": "package.json",
   "scripts": {
     "test": "mocha",
-    "start": "browser-sync start --server"
+    "start": "browser-sync start --server",
+    "sass": "node-sass src/scss/main.scss src/css/main.css"
   },
   "repository": {
     "type": "git",
