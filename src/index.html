@@ -68,18 +68,12 @@
                 <p>Stuff you did...good for you</p>
               </div><!--.panels-->
               <div id="repositories">
-                <hr />
-                <a href="https://github.com/octocat/Spoon-Knife" class="panels">Spoon-Knife</a>
-                <p>This repo is for demonstration purposes only.</p>
-                <p>Updated 6 hours ago</p>
-                <hr />
-                <a href="https://github.com/octocat/Hello-World" class="panels">Hello-World</a>
-                <p>This your first repo!</p>
-                <p>Updated 4 days ago</p>
-                <hr />
-                <a href="https://github.com/octocat.github.io" class="panels">octocat.github.io</a>
-                <p>Updated 4 days ago</p>
-                <hr />
+                <article class="repo" ng-repeat="repo in repos | orderBy: '-updated_at'">
+                  <a href="{{repo.html_url}}">{{repo.name}}</a>
+                  <p>{{repo.description}}</p>
+                  <p>Updated on {{repo.updated_at | date}}</p>
+                </article>
+
               </div><!--.panels-->
               <div id="public-activity">
                 <p>Everybody can see this.</p>

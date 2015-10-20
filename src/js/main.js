@@ -65,6 +65,30 @@
           $rootScope.user = response.data;
         });
     }) // END run -- load data from `boshnivolo`
+
+    .run(function($http, $rootScope){
+      $http.get('/apis/github/users/boshnivolo/repos.json')
+        .then(function(response){
+          console.log(response.data);
+
+          // First baby step...
+          // $rootScope.html_url = repo.html_url;
+          // $rootScope.name = repo.name;
+          // $rootScope.description = repo.description;
+          // $rootScope.updated_at = repo.updated_at;
+
+          // Next baby step...
+          // $rootScope.repo = {
+          //   html_url: response.data[4].html_url,
+          //   name: response.data[4].name,
+          //   description: response.data[4].description,
+          //   updated_at: response.data[4].updated_at
+          // };
+
+          // Final baby step...
+          $rootScope.repos = response.data;
+        });
+    }) // END run -- load data from `boshnivolo/repos.json`
 })(); // END IIFE
 
 
