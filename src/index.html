@@ -20,23 +20,23 @@
           <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
       <![endif]-->
 
-      <main class="container">
+      <main class="container" ng-app="TIY-GitHub">
         <section class="small-column">
           <img src="https://avatars1.githubusercontent.com/u/583231?v=3&s=460" height="240" width="240"/>
           <br>
-          <span class="full_name"> {{name}}</span>
+          <span class="full_name"> {{user.name}}</span>
 
-          <span class="username"> {{login}}</span>
+          <span class="username"> {{user.login}}</span>
             <hr />
-          <span class="octicon octicon-organization"> {{organizations_url}}</span>
+          <span class="octicon octicon-organization"> {{user.organizations_url}}</span>
           <br>
-          <span class="octicon octicon-location"> {{location}}</span>
+          <span class="octicon octicon-location"> {{user.location}}</span>
           <br>
-          <span class="octicon octicon-mail"> {{email}}</span>
+          <span class="octicon octicon-mail"> {{user.email}}</span>
           <br>
-          <span class="octicon octicon-link"> {{blog}}</span>
+          <span class="octicon octicon-link"> {{user.blog}}</span>
           <br>
-          <span class="octicon octicon-clock"> {{created_at}}</span>
+          <span class="octicon octicon-clock"> {{user.created_at}}</span>
           <hr />
           <div class="pi-blocks">
             <div class="pi">
