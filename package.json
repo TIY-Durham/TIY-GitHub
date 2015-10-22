@@ -4,7 +4,9 @@
   "description": "",
   "main": "package.json",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "start": "browser-sync start --server",
+    "sass": "node-sass src/scss/main.scss src/css/main.css"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,7 @@
   },
   "homepage": "https://github.com/boshnivolo/TIY-GitHub#readme",
   "devDependencies": {
-    "bower": "^1.5.3"
+    "bower": "^1.5.3",
+    "wiredep": "^2.2.2"
   }
 }

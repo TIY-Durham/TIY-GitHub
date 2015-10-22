@@ -1,0 +1,23 @@
+.tabs {
+  border-bottom: 1px solid gray;
+
+  > a {
+    padding: 1ex 1em;
+    margin: 0;
+
+    &.active {
+      border: 1px solid gray;
+      border-bottom-color: white;
+    }
+  }
+}
+.panels {
+  > * {
+    display: none;
+    
+    &.active {
+      display: block;
+    }
+  }
+
+}

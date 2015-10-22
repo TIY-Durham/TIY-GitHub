@@ -77,6 +77,14 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+
+@import 'custom';
+
+main.container {
+  width: auto; margin: 0 auto;
+  max-width: 1200px;
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -146,6 +154,10 @@ textarea {
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
+@media screen and (max-width: 35em){
+  /* Mobile-only styles here... */
+}
+
 /* ==========================================================================
    Print styles.
    Inlined to avoid the additional HTTP request:

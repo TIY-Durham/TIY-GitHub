@@ -3,99 +3,93 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
+        <title>No one really likes titles around here...</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
+        <!-- bower:css -->
+        <link rel="stylesheet" href="../bower_components/normalize-css/normalize.css" />
+        <!-- endbower -->
         <link rel="stylesheet" href="css/main.css"/>
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/_custom.css"/>
-        <link rel="stylesheet" href="octicons/octicons.css">
 
     </head>
     <body>
-      <main class = "small-column">
-        <img src = "https://avatars1.githubusercontent.com/u/583231?v=3&s=460" height="240" width="240"/>
-        <br>
-        <span class = "full_name"> {{name}}</span>
+      <!--[if lt IE 8]>
+          <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
 
-        <span class = "username"> {{login}}</span>
+      <main class="container" ng-app="TIY-GitHub">
+        <section class="small-column">
+          <img src="https://avatars1.githubusercontent.com/u/583231?v=3&s=460" height="240" width="240"/>
+          <br>
+          <span class="full_name"> {{user.name}}</span>
+
+          <span class="username"> {{user.login}}</span>
+            <hr />
+          <span class="octicon octicon-organization"> {{user.organizations_url}}</span>
+          <br>
+          <span class="octicon octicon-location"> {{user.location}}</span>
+          <br>
+          <span class="octicon octicon-mail"> {{user.email}}</span>
+          <br>
+          <span class="octicon octicon-link"> {{user.blog}}</span>
+          <br>
+          <span class="octicon octicon-clock"> {{user.created_at}}</span>
           <hr />
-        <span class="octicon octicon-organization"> {{organizations_url}}</span>
-        <br>
-        <span class="octicon octicon-location"> {{location}}</span>
-        <br>
-        <span class="octicon octicon-mail"> {{email}}</span>
-        <br>
-        <span class="octicon octicon-link"> {{blog}}</span>
-        <br>
-        <span class="octicon octicon-clock"> {{created_at}}</span>
-        <hr />
-        <div class = "pi">
-          <a href="{{followers_url}}" class="pi_link" id="followers_link"> {{followers}} </a>
-          <p class="pi_grey" id="grey_followers">Followers</td>
-        </div>
-        <div class = "pi"><a href="{{starred_url}}" class="pi_link" id="starred"> {{starred}} </a>
-          <p class="pi_grey" id="grey_starred">Starred</td>
-        </div>
-        <div class = "pi"><a href="{{following_url}}" class="pi_link" id="following_link"> {{following}} </a>
-          <p class="pi_grey" id="grey_following">Following</td>
-        </div>
-
-
+          <div class="pi-blocks">
+            <div class="pi">
+              <a href="{{followers_url}}" class="pi_link" id="followers_link"> {{followers}} </a>
+              <p class="pi_grey" id="grey_followers">Followers</td>
+            </div>
+            <div class="pi"><a href="{{starred_url}}" class="pi_link" id="starred"> {{starred}} </a>
+              <p class="pi_grey" id="grey_starred">Starred</td>
+            </div>
+            <div class="pi"><a href="{{following_url}}" class="pi_link" id="following_link"> {{following}} </a>
+              <p class="pi_grey" id="grey_following">Following</td>
+            </div>
+          </div><!-- .grid -->
         </section>
 
-        <main class = "big-column">
+        <section class="big-column">
           <nav>
-          <form class="repo_search" action="/search" method="get" role="search">
-            <input type="text" class="search" placeholder="Find a repository...">
-            <input type="submit" value="Search" class="btn">
-          </nav>
-          <div class = "tabs">
-            <a href="#tab1" class="active"><span class="octicon octicon-diff-added tabs"> Contributions</span></a>
-              <section id="tab1" class="panels">
+            <form class="repo_search" action="/search" method="get" role="search">
+              <input type="text" class="search" placeholder="Find a repository...">
+              <input type="submit" value="Search" class="btn">
+            </nav>
+            <nav class="tabs">
+              <a href="#contributions"><span class="octicon octicon-diff-added"> Contributions</span></a>
+              <a href="#repositories"><span class="octicon octicon-repo"> Repositories</span></a>
+              <a href="#public-activity"><span class="octicon octicon-rss">Public Activity</span></a>
+            </nav><!-- .tabs -->
+            <section class="panels">
+              <div id="contributions">
                 <p>Stuff you did...good for you</p>
-              </section><!--.panels-->
-            <a href="#tab2"><span class="octicon octicon-repo tabs"> Repositories</span></a>
-              <section id="tab2" class="panels">
-                <hr />
-                  <a href="https://github.com/octocat/Spoon-Knife" class="panels">Spoon-Knife</a>
-                  <p>This repo is for demonstration purposes only.</p>
-                  <p>Updated 6 hours ago</p>
-                  <hr />
-                  <a href="https://github.com/octocat/Hello-World" class="panels">Hello-World</a>
-                  <p>This your first repo!</p>
-                  <p>Updated 4 days ago</p>
-                  <hr />
-                  <a href="https://github.com/octocat.github.io" class="panels">octocat.github.io</a>
-                  <p>Updated 4 days ago</p>
-                  <hr />
-              </section><!--.panels-->
-            <a href="#tab3"><span class="octicon octicon-rss tabs">Public Activity</span></a>
-              <section id="tab3" class="panels">
+              </div><!--.panels-->
+              <div id="repositories">
+                <article class="repo" ng-repeat="repo in repos | orderBy: '-updated_at'">
+                  <a href="{{repo.html_url}}">{{repo.name}}</a>
+                  <p>{{repo.description}}</p>
+                  <p>Updated on {{repo.updated_at | date}}</p>
+                </article>
+
+              </div><!--.panels-->
+              <div id="public-activity">
                 <p>Everybody can see this.</p>
                 <p>What have you done</p>
-              </section>
-          </div>
-        </main>
+              </div>
+            </div>
+          </section>
+        </main><!-- .container -->
 
-
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
-        <!-- Add your site or application content here -->
-
-
-    </body>
-
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+    <!-- bower:js -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/lodash/lodash.js"></script>
+    <!-- endbower -->
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
@@ -106,5 +100,5 @@
         r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
         ga('create','UA-XXXXX-X','auto');ga('send','pageview');
     </script>
-
+  </body>
 </html>
